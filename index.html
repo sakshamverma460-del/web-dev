@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Website</title>
+     
+    <style>
+        h1 {
+            color: rgb(255, 196, 0);
+        }
+
+        p {
+            color: green;
+            font-size: 20px;
+        }
+
+        a {
+            color: rgb(17, 255, 0);
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>My First Website</h1>
+
+    <p>Ye mera first web page hai</p>
+
+    <a href="https://google.com">Google Open Karo</a>
+
+    <hr>
+
+    <div class="container">
+
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+
+    </div>
+    <button onclick="changeText()">Click Me</button>
+
+     <h2 id="text">Hello</h2>
+    <script>
+function changeText() {
+    document.getElementById("text").innerText = "Text Changed!";
+}
+</script>
+</body>
+</html>
