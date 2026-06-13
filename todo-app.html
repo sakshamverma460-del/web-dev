@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do App</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: rgb(255, 196, 0);
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: lightblue;
+            margin: 10px auto;
+            padding: 10px;
+            width: 250px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .deleteBtn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>My To-Do App</h1>
+
+    <input id="inputBox" type="text" placeholder="Enter task">
+    <button id="addBtn">Add</button>
+
+    <ul id="list"></ul>
+
+    <script>
+        document.getElementById("addBtn").addEventListener("click", function () {
+
+            let task = document.getElementById("inputBox").value;
+
+            if (task === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            let li = document.createElement("li");
+
+            let span = document.createElement("span");
+            span.innerText = task;
+
+            let delBtn = document.createElement("button");
+            delBtn.innerText = "❌";
+            delBtn.classList.add("deleteBtn");
+
+            delBtn.addEventListener("click", function () {
+                li.remove();
+            });
+
+            li.appendChild(span);
+            li.appendChild(delBtn);
+
+            document.getElementById("list").appendChild(li);
+
+            document.getElementById("inputBox").value = "";
+
+        });
+    </script>
+
+</body>
+</html>

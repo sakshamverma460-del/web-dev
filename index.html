@@ -59,6 +59,21 @@
 function changeText() {
     document.getElementById("text").innerText = "Text Changed!";
 }
+document.getElementById("addBtn").addEventListener("click", function() {
+    
+    let input = document.getElementById("inputBox").value;
+
+    let li = document.createElement("li");
+    li.innerText = input;
+
+    document.getElementById("list").appendChild(li);
+
+});
 </script>
+<input id="inputBox" type="text" placeholder="Enter task">
+
+<button id="addBtn">Add Task</button>
+
+<ul id="list"></ul>
 </body>
 </html>
